@@ -1,0 +1,160 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid transparent;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.header.scrolled {
+  background: rgba(247, 250, 248, 0.95);
+  box-shadow: var(--shadow-ambient);
+}
+
+.nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+/* ── Logo ── */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logoMark {
+  font-size: 1.5rem;
+  color: var(--color-gold);
+  line-height: 1;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.logoMain {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: -0.02em;
+}
+
+.logoSub {
+  font-size: 0.65rem;
+  color: var(--color-gold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* ── Desktop Links ── */
+.links {
+  display: flex;
+  list-style: none;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  text-decoration: none;
+  border-radius: var(--radius-lg);
+  transition: color 0.2s, background 0.2s;
+  letter-spacing: 0.02em;
+}
+
+.link:hover,
+.linkActive {
+  background: var(--color-surface-low);
+  color: var(--color-primary);
+}
+
+.linkDonate {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-container));
+  color: #ffffff !important;
+  border-radius: var(--radius-lg);
+  padding: 0.5rem 1.25rem;
+  margin-left: 0.5rem;
+  transition: opacity 0.2s, transform 0.15s !important;
+}
+
+.linkDonate:hover {
+  opacity: 0.9;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-container)) !important;
+  transform: translateY(-1px);
+}
+
+/* ── Hamburger ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-primary);
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.hamburgerOpen span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburgerOpen span:nth-child(2) { opacity: 0; }
+.hamburgerOpen span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* ── Mobile Menu ── */
+.mobileMenu {
+  background: var(--color-surface-low);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1.5rem 1.5rem;
+  gap: 0.25rem;
+}
+
+.mobileLink {
+  padding: 0.75rem 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  text-decoration: none;
+  transition: color 0.15s;
+  border-radius: var(--radius-lg);
+}
+
+.mobileLink:hover { background: var(--color-surface-high); color: var(--color-primary); }
+
+.mobileLinkDonate {
+  text-align: center;
+  margin-top: 1rem;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-container));
+  color: #ffffff !important;
+  padding: 1rem;
+}
+
+@media (max-width: 900px) {
+  .links { display: none; }
+  .hamburger { display: flex; }
+}

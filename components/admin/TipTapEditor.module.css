@@ -1,0 +1,161 @@
+.wrapper {
+  border: 1.5px solid #d8e0e8;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ffffff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.wrapper:focus-within {
+  border-color: #5A7A3A;
+  box-shadow: 0 0 0 3px rgba(90, 122, 58, 0.1);
+}
+
+/* ── Toolbar ── */
+.toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.1rem;
+  padding: 0.5rem 0.6rem;
+  background: #f4f7f5;
+  border-bottom: 1px solid #e0e8e0;
+}
+
+.toolGroup {
+  display: flex;
+  gap: 0.1rem;
+}
+
+.toolBtn {
+  padding: 0.28rem 0.55rem;
+  border: none;
+  background: none;
+  border-radius: 5px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  color: #4a5a6a;
+  transition: background 0.15s, color 0.15s;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.toolBtn:hover:not(:disabled) {
+  background: #dce8da;
+  color: #2C3E50;
+}
+
+.toolBtn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.toolBtnActive {
+  padding: 0.28rem 0.55rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  line-height: 1.5;
+  white-space: nowrap;
+  background: #c8ddc4;
+  color: #2a5820;
+  font-weight: 700;
+  transition: background 0.15s, color 0.15s;
+}
+
+.divider {
+  display: inline-block;
+  width: 1px;
+  height: 20px;
+  background: #c8d8c8;
+  margin: 0 0.3rem;
+  flex-shrink: 0;
+}
+
+/* ── Editor Content Area ── */
+.editorWrap {
+  min-height: 380px;
+  cursor: text;
+}
+
+.editorContent {
+  min-height: 380px;
+  padding: 1.1rem 1.25rem;
+  outline: none;
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: #2C3E50;
+}
+
+/* Prosemirror element styles via :global */
+.editorContent :global(.ProseMirror) {
+  min-height: 350px;
+  outline: none;
+}
+
+.editorContent :global(.ProseMirror h2) {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2C3E50;
+  margin: 1.5rem 0 0.6rem;
+  line-height: 1.3;
+}
+
+.editorContent :global(.ProseMirror h3) {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #2C3E50;
+  margin: 1.25rem 0 0.4rem;
+}
+
+.editorContent :global(.ProseMirror p) {
+  margin: 0 0 0.75rem;
+}
+
+.editorContent :global(.ProseMirror p:last-child) {
+  margin-bottom: 0;
+}
+
+.editorContent :global(.ProseMirror blockquote) {
+  border-left: 4px solid #C49A2B;
+  margin: 1rem 0;
+  padding: 0.6rem 1.1rem;
+  color: #6a7a8a;
+  font-style: italic;
+  background: #fdfaf3;
+  border-radius: 0 6px 6px 0;
+}
+
+.editorContent :global(.ProseMirror ul),
+.editorContent :global(.ProseMirror ol) {
+  padding-left: 1.5rem;
+  margin: 0.5rem 0 0.75rem;
+}
+
+.editorContent :global(.ProseMirror li) {
+  margin-bottom: 0.2rem;
+}
+
+.editorContent :global(.ProseMirror a) {
+  color: #5A7A3A;
+  text-decoration: underline;
+}
+
+.editorContent :global(.ProseMirror img) {
+  max-width: 100%;
+  border-radius: 8px;
+  margin: 1rem 0;
+  display: block;
+}
+
+.editorContent :global(.ProseMirror p.is-editor-empty:first-child::before) {
+  content: attr(data-placeholder);
+  float: left;
+  color: #b8c8c8;
+  pointer-events: none;
+  height: 0;
+}

@@ -1,0 +1,27 @@
+.base {
+  opacity: 0;
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.visible {
+  opacity: 1 !important;
+  transform: translate(0, 0) !important;
+}
+
+.translateUp {
+  transform: translateY(30px);
+}
+
+.translateDown {
+  transform: translateY(-30px);
+}
+
+.translateLeft {
+  transform: translateX(-30px);
+}
+
+.translateRight {
+  transform: translateX(30px);
+}

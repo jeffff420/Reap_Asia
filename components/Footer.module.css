@@ -1,0 +1,150 @@
+.footer {
+  background: var(--color-primary);
+  color: var(--color-surface-high);
+  padding-top: 5rem;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.2fr;
+  gap: 4rem;
+}
+
+/* ── Brand ── */
+
+.brandLogo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.brandMark {
+  font-size: 1.75rem;
+  color: var(--color-gold);
+}
+
+.brandName {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--color-surface-low);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  border-left: 2px solid var(--color-gold);
+  padding-left: 1rem;
+  font-weight: 300;
+}
+
+.note {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: var(--color-surface-high);
+  opacity: 0.7;
+}
+
+/* ── Columns ── */
+
+.colTitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 1.5rem;
+}
+
+.colLinks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.colLinks li a {
+  font-size: 0.95rem;
+  color: var(--color-surface-high);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.colLinks li a:hover {
+  color: #ffffff;
+}
+
+/* ── Contact ── */
+.contactItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.95rem;
+}
+
+.contactItem:last-child { margin-bottom: 0; }
+
+.contactLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-gold);
+  margin-bottom: 0.25rem;
+}
+
+.contactItem span {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.contactItem a {
+  color: var(--color-surface-high);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contactItem a:hover { color: #ffffff; }
+
+/* ── Bottom bar ── */
+.bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.bottom p {
+  font-size: 0.85rem;
+  color: var(--color-surface-high);
+  opacity: 0.6;
+}
+
+.scripture {
+  font-style: italic;
+  opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}

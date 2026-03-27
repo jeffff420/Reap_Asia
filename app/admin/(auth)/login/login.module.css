@@ -1,0 +1,131 @@
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a2a1a 0%, #2C3E50 100%);
+  padding: 1.5rem;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.3);
+}
+
+.brand {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.logoMark {
+  font-size: 2rem;
+  color: #5A7A3A;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-family: 'Georgia', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #2C3E50;
+  margin: 0 0 0.25rem;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: #8a9aaa;
+  margin: 0;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #4a5a6a;
+  letter-spacing: 0.03em;
+}
+
+.input {
+  padding: 0.7rem 0.9rem;
+  border: 1.5px solid #d8e0e8;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #2C3E50;
+  background: #fafafa;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  border-color: #5A7A3A;
+  box-shadow: 0 0 0 3px rgba(90, 122, 58, 0.12);
+  background: #ffffff;
+}
+
+.input::placeholder {
+  color: #b0bec5;
+}
+
+.error {
+  background: #fff5f5;
+  border: 1px solid #feb2b2;
+  color: #c53030;
+  border-radius: 8px;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.875rem;
+}
+
+.button {
+  margin-top: 0.4rem;
+  padding: 0.8rem;
+  background: #5A7A3A;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  letter-spacing: 0.02em;
+}
+
+.button:hover:not(:disabled) {
+  background: #4a6830;
+  transform: translateY(-1px);
+}
+
+.button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.footer {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #aab5c0;
+}

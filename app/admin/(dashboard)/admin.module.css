@@ -1,0 +1,479 @@
+/* ─── Shell Layout ─────────────────────────────────────────── */
+.shell {
+  display: flex;
+  min-height: 100vh;
+  background: #f0f2f5;
+}
+
+/* ─── Sidebar ───────────────────────────────────────────────── */
+.sidebar {
+  width: 240px;
+  min-height: 100vh;
+  background: #1e2d1e;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  flex-shrink: 0;
+}
+
+.sidebarBrand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.5rem 1.25rem 1.25rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.sidebarLogo {
+  font-size: 1.4rem;
+  color: #C49A2B;
+  line-height: 1;
+}
+
+.sidebarTitle {
+  font-family: 'Georgia', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.sidebarSub {
+  font-size: 0.7rem;
+  color: #7a9a6a;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ─── Navigation ────────────────────────────────────────────── */
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 1rem 0.75rem;
+  flex: 1;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  color: #a8bfa8;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+  font-weight: 500;
+}
+
+.navLink:hover {
+  background: rgba(255,255,255,0.07);
+  color: #ffffff;
+}
+
+.navLinkActive {
+  background: rgba(90, 122, 58, 0.3);
+  color: #c8e0b0;
+}
+
+.navLinkActive:hover {
+  background: rgba(90, 122, 58, 0.35);
+  color: #c8e0b0;
+}
+
+.navIcon {
+  font-size: 1rem;
+  width: 20px;
+  text-align: center;
+}
+
+/* ─── Sidebar Footer ─────────────────────────────────────────── */
+.sidebarFooter {
+  padding: 1rem 1.25rem 1.25rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.userAvatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #5A7A3A;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.userEmail {
+  font-size: 0.73rem;
+  color: #7a9a8a;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.logoutBtn {
+  width: 100%;
+  padding: 0.5rem;
+  background: rgba(196, 70, 50, 0.15);
+  border: 1px solid rgba(196, 70, 50, 0.25);
+  color: #e09080;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.logoutBtn:hover {
+  background: rgba(196, 70, 50, 0.28);
+  color: #f0a090;
+}
+
+.viewSiteLink {
+  display: block;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #6a8a7a;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.viewSiteLink:hover {
+  color: #8aaa9a;
+}
+
+/* ─── Main Content Area ──────────────────────────────────────── */
+.main {
+  flex: 1;
+  padding: 2rem;
+  min-width: 0;
+}
+
+/* ─── Dashboard Cards ────────────────────────────────────────── */
+.pageHeader {
+  margin-bottom: 2rem;
+}
+
+.pageTitle {
+  font-family: 'Georgia', serif;
+  font-size: 1.6rem;
+  color: #2C3E50;
+  margin: 0 0 0.25rem;
+}
+
+.pageSubtitle {
+  font-size: 0.875rem;
+  color: #7a8a9a;
+  margin: 0;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.statCard {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border: 1px solid #e8edf2;
+}
+
+.statValue {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2C3E50;
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  color: #8a9aaa;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.quickActions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.actionCard {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border: 1px solid #e8edf2;
+  transition: box-shadow 0.2s, transform 0.2s;
+  display: block;
+}
+
+.actionCard:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+.actionIcon {
+  font-size: 1.8rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.actionTitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #2C3E50;
+  margin: 0 0 0.3rem;
+}
+
+.actionDesc {
+  font-size: 0.8rem;
+  color: #8a9aaa;
+  margin: 0;
+}
+
+.recentSection {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border: 1px solid #e8edf2;
+}
+
+.sectionTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2C3E50;
+  margin: 0 0 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #eef2f6;
+}
+
+.recentPost {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid #f0f4f8;
+  text-decoration: none;
+}
+
+.recentPost:last-child {
+  border-bottom: none;
+}
+
+.recentPostTitle {
+  font-size: 0.875rem;
+  color: #2C3E50;
+  font-weight: 500;
+}
+
+.recentPost:hover .recentPostTitle {
+  color: #5A7A3A;
+}
+
+.statusBadge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.statusPublished {
+  background: #e8f5e1;
+  color: #3a6a1a;
+}
+
+.statusDraft {
+  background: #f5f0e0;
+  color: #8a6a10;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 2rem;
+  color: #aab5c0;
+  font-size: 0.875rem;
+}
+
+/* ─── Blog List Page ─────────────────────────────────────────── */
+.newPostBtn {
+  padding: 0.6rem 1.25rem;
+  background: #5A7A3A;
+  color: #ffffff;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.1s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.newPostBtn:hover {
+  background: #4a6830;
+  transform: translateY(-1px);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  text-align: left;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #8a9aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0 0.75rem 0.75rem;
+  border-bottom: 1px solid #eef2f6;
+}
+
+.table td {
+  padding: 0.85rem 0.75rem;
+  border-bottom: 1px solid #f0f4f8;
+  font-size: 0.875rem;
+  color: #2C3E50;
+  vertical-align: middle;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.postTitle {
+  display: block;
+  font-weight: 600;
+  color: #2C3E50;
+}
+
+.postSlug {
+  display: block;
+  font-size: 0.72rem;
+  color: #9aaaaA;
+  margin-top: 0.1rem;
+}
+
+.tagPill {
+  display: inline-block;
+  padding: 0.18rem 0.55rem;
+  background: #eef4f8;
+  color: #5a7a8a;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+
+.noTag {
+  color: #c0ccd8;
+}
+
+.dateCell {
+  white-space: nowrap;
+  font-size: 0.8rem;
+  color: #8a9aaa;
+}
+
+.tableActions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btnTableEdit {
+  padding: 0.32rem 0.7rem;
+  background: #eef4ff;
+  color: #3a5aaa;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+
+.btnTableEdit:hover {
+  background: #d8e8ff;
+}
+
+.btnTableDelete {
+  padding: 0.32rem 0.7rem;
+  background: #fff5f5;
+  color: #c53030;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+
+.btnTableDelete:hover:not(:disabled) {
+  background: #fed7d7;
+}
+
+.btnTableDelete:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btnTableCancel {
+  padding: 0.32rem 0.7rem;
+  background: #f0f4f8;
+  color: #5a6a7a;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btnTableCancel:hover {
+  background: #e0e8f0;
+}
+
+.confirmRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.confirmText {
+  font-size: 0.78rem;
+  color: #c53030;
+  font-weight: 500;
+}
+

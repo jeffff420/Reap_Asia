@@ -1,0 +1,180 @@
+.page {
+  background: var(--color-bg);
+  min-height: calc(100vh - 300px);
+}
+
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-container));
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 8rem 1.5rem 6rem;
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+  margin-bottom: 4rem;
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    border-radius: 0;
+    padding: 6rem 1.5rem 4rem;
+  }
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+.heroEyebrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.heroTitle {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  color: #ffffff;
+  margin: 0 0 1.5rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
+.heroSub {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  max-width: 650px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+.content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 8rem;
+}
+
+.section {
+  margin-bottom: 5rem;
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+/* Base Typography for Content */
+.content h2 {
+  font-size: 2.25rem;
+  color: var(--color-primary);
+  margin: 4rem 0 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  /* Removed border-bottom mapping NO-LINE rule */
+}
+
+.content h2:first-child {
+  margin-top: 0;
+}
+
+.content h3 {
+  font-size: 1.5rem;
+  color: var(--color-heading);
+  margin: 3rem 0 1rem;
+  font-weight: 600;
+}
+
+.content p {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--color-body);
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+
+.content ul,
+.content ol {
+  font-size: 1.125rem;
+  color: var(--color-body);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  padding-left: 2rem;
+  font-weight: 300;
+}
+
+.content li {
+  margin-bottom: 0.75rem;
+}
+
+.content blockquote {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--color-primary);
+  border-left: 4px solid var(--color-gold);
+  background: var(--color-surface-low);
+  padding: 2.5rem;
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  margin: 3rem 0;
+  font-weight: 300;
+}
+
+/* Grid Layouts inside content */
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.card {
+  background: var(--color-surface-low);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s;
+  /* No border as per No-line rule */
+}
+
+.card:hover {
+  background: var(--color-surface-high);
+  transform: translateY(-4px);
+}
+
+.cardIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  color: var(--color-heading);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.cardText {
+  font-size: 0.95rem !important;
+  color: var(--color-body) !important;
+  line-height: 1.6;
+  margin-bottom: 0 !important;
+  font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  .grid2 { grid-template-columns: 1fr; gap: 2rem; }
+  .hero { padding: 4rem 1.5rem; min-height: 300px; }
+  .content { padding: 4rem 1.5rem 6rem; }
+}
