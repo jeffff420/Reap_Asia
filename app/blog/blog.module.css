@@ -2,7 +2,7 @@
 .blogGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
+  gap: 1.5rem;
   padding-bottom: 2rem;
 }
 
@@ -35,7 +35,7 @@
 }
 
 .cardBody {
-  padding: 2rem;
+  padding: 1.5rem;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -66,20 +66,27 @@
 }
 
 .cardTitle {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 600;
   color: var(--color-primary);
   line-height: 1.35;
-  margin: 0 0 1rem;
+  margin: 0 0 0.75rem;
 }
 
 .cardExcerpt {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--color-body);
-  line-height: 1.6;
-  margin: 0 0 1.5rem;
+  line-height: 1.5;
+  margin: 0 0 1.25rem;
   flex: 1;
   font-weight: 300;
+  
+  /* Strictly limit excerpt to 3 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .readMore {

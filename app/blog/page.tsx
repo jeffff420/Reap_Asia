@@ -53,12 +53,10 @@ export default async function BlogListPage() {
               <Link href={`/blog/${post.slug}`} key={post.id} className={styles.blogCard}>
                 <div className={styles.cardImageWrap}>
                   {post.featured_image_url ? (
-                    <Image
+                    <img
                       src={post.featured_image_url}
                       alt={post.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      style={{ objectFit: 'cover' }}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0 }}
                       className={styles.cardImage}
                     />
                   ) : (

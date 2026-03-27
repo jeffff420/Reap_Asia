@@ -16,13 +16,13 @@ export default function Footer() {
             &ldquo;Preaching God&apos;s word.<br />Serving God&apos;s world.&rdquo;
           </p>
           <p className={styles.note}>
-            A US-based nonprofit working in North Bihar, India and Nepal for over 20 years.
+            A US-based nonprofit operating in North Bihar, India and Nepal for over 20 years. Bringing the Gospel to unreached peoples.
           </p>
         </div>
 
         {/* Quick Links */}
         <div className={styles.col}>
-          <h3 className={styles.colTitle}>Quick Links</h3>
+          <h3 className={styles.colTitle}>Navigate</h3>
           <ul className={styles.colLinks}>
             <li><Link href="/about">About Us</Link></li>
             <li><Link href="/our-work">Our Work</Link></li>
@@ -37,20 +37,23 @@ export default function Footer() {
         {/* Contact */}
         <div className={styles.col}>
           <h3 className={styles.colTitle}>Contact</h3>
-          <div className={styles.contactItem}>
+          <div className={styles.contactGroup}>
             <span className={styles.contactLabel}>USA Office</span>
-            <span>Rev. John Abraham</span>
+            <span className={styles.contactName}>Rev. John Abraham</span>
             <a href="tel:9724127311">972-412-7311</a>
+            <a href="tel:2147551569">214-755-1569</a>
             <a href="mailto:johnabrahamdfw@gmail.com">johnabrahamdfw@gmail.com</a>
           </div>
-          <div className={styles.contactItem}>
+          <div className={styles.contactGroup}>
             <span className={styles.contactLabel}>India Office</span>
-            <span>Sunil Raj Mathew</span>
+            <span className={styles.contactName}>Sunil Raj Mathew</span>
             <a href="tel:+919446743928">+91-94467-43928</a>
           </div>
-          <div className={styles.contactItem}>
+          <div className={styles.contactGroup}>
             <span className={styles.contactLabel}>Website</span>
-            <a href="https://www.reapasia.org" target="_blank" rel="noopener noreferrer">www.reapasia.org</a>
+            <a href="https://www.reapasia.org" target="_blank" rel="noopener noreferrer">
+              www.reapasia.org
+            </a>
           </div>
         </div>
 

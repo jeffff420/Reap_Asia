@@ -75,12 +75,10 @@ export default async function ImageGallery() {
       {displayImages.map((item) => (
         <div key={item.id} className={styles.galleryItem}>
           {item.src ? (
-            <Image 
+            <img 
               src={item.src} 
               alt={item.alt || item.caption || 'Gallery Image'} 
-              fill 
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              style={{ objectFit: 'cover' }} 
+              style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0 }} 
             />
           ) : (
             <div className={styles.placeholderBg} />

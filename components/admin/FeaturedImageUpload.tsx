@@ -37,7 +37,7 @@ export default function FeaturedImageUpload({ currentUrl, onUpload }: FeaturedIm
       .upload(fileName, file, { upsert: true })
 
     if (uploadError || !data) {
-      setError('Upload failed. Please try again.')
+      setError(`Upload failed: ${uploadError?.message || 'Unknown error'}`)
       setUploading(false)
       return
     }
@@ -54,12 +54,13 @@ export default function FeaturedImageUpload({ currentUrl, onUpload }: FeaturedIm
     <div className={styles.wrapper}>
       {currentUrl ? (
         <div className={styles.preview}>
-          <Image
+          {/* Using native img to bypass next/image config requirements in admin */}
+          <img
             src={currentUrl}
             alt="Featured image preview"
-            width={400}
-            height={200}
+            width="400"
             className={styles.previewImg}
+            style={{ objectFit: 'cover', height: 'auto', borderRadius: '8px' }}
           />
           <div className={styles.previewActions}>
             <button

@@ -12,8 +12,6 @@ const navLinks = [
   { href: '/mission-field', label: 'Bihar & Nepal' },
   { href: '/mission-station', label: 'Mission Station' },
   { href: '/blog', label: 'Blog' },
-  { href: '/donate', label: 'Give' },
-  { href: '/contact', label: 'Contact' },
 ]
 
 export default function Navbar() {
@@ -22,7 +20,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20)
+    const handleScroll = () => setScrolled(window.scrollY > 32)
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -30,7 +28,7 @@ export default function Navbar() {
   useEffect(() => { setMenuOpen(false) }, [pathname])
 
   return (
-    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
+    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''} ${menuOpen ? styles.menuActive : ''}`}>
       <nav className={styles.nav}>
         {/* Logo */}
         <Link href="/" className={styles.logo}>
@@ -51,39 +49,49 @@ export default function Navbar() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`${styles.link} ${isActive ? styles.linkActive : ''} ${link.href === '/donate' ? styles.linkDonate : ''}`}
+                  className={`${styles.link} ${isActive ? styles.linkActive : ''}`}
                 >
                   {link.label}
+                  {isActive && <span className={styles.activeDot} />}
                 </Link>
               </li>
             )
           })}
         </ul>
 
+        {/* Give CTA (separate from nav list) */}
+        <div className={styles.navActions}>
+          <Link href="/contact" className={styles.contactLink}>Contact</Link>
+          <Link href="/donate" className={styles.giveCta}>Give</Link>
+        </div>
+
         {/* Mobile hamburger */}
         <button
           className={`${styles.hamburger} ${menuOpen ? styles.hamburgerOpen : ''}`}
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
+          aria-label="Toggle navigation menu"
+          aria-expanded={menuOpen}
         >
-          <span /><span /><span />
+          <span />
+          <span />
+          <span />
         </button>
       </nav>
 
       {/* Mobile menu */}
-      {menuOpen && (
-        <div className={styles.mobileMenu}>
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`${styles.mobileLink} ${link.href === '/donate' ? styles.mobileLinkDonate : ''}`}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </div>
-      )}
+      <div className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ''}`} aria-hidden={!menuOpen}>
+        {navLinks.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className={styles.mobileLink}
+          >
+            {link.label}
+          </Link>
+        ))}
+        <Link href="/contact" className={styles.mobileLink}>Contact</Link>
+        <Link href="/donate" className={styles.mobileLinkGive}>Give →</Link>
+      </div>
     </header>
   )
 }

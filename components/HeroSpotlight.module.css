@@ -1,0 +1,49 @@
+.tracker {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: all;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.spotlight {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  /* dot grid revealed only under cursor spotlight */
+  background-image: radial-gradient(circle, rgba(80, 220, 130, 1) 1px, transparent 1px);
+  background-size: 22px 22px;
+
+  /* mask: only show dots in a ~180px circle around the cursor */
+  -webkit-mask-image: radial-gradient(
+    circle 180px at var(--x, 50%) var(--y, 50%),
+    black 0%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    circle 180px at var(--x, 50%) var(--y, 50%),
+    black 0%,
+    transparent 100%
+  );
+}
+
+.cursorGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  pointer-events: none;
+  
+  /* solid glowing core */
+  background: rgba(140, 255, 170, 0.95);
+  box-shadow:
+    0 0 12px 4px rgba(80, 220, 130, 0.6),
+    0 0 24px 8px rgba(80, 220, 130, 0.3);
+    
+  /* perfectly track cursor with instantaneous CSS */
+  transform: translate(calc(var(--x) - 50%), calc(var(--y) - 50%));
+}

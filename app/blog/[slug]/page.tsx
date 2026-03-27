@@ -80,13 +80,10 @@ export default async function SinglePostPage({ params }: PageProps) {
 
           {post.featured_image_url && (
             <div className={styles.articleFeaturedImageWrap}>
-              <Image
+              <img
                 src={post.featured_image_url}
                 alt={post.title}
-                width={1200}
-                height={600}
                 className={styles.articleFeaturedImage}
-                priority
               />
             </div>
           )}
