@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# REAP Asia Ministries — Web Platform
 
-## Getting Started
+This is the comprehensive web platform for **REAP Asia Ministries Inc.**, built with modern web technologies to ensure lightning-fast performance, extreme security, and an elegant, editorial design aesthetic. 
 
-First, run the development server:
+The platform consists of a public-facing website and an authenticated admin dashboard for managing dynamic content directly from the browser.
 
+## 🛠 Tech Stack
+- **Framework:** Next.js 15 (App Router, Turbopack)
+- **Styling:** Vanilla CSS Modules (`.module.css`) for strict scoping
+- **Icons:** `lucide-react`
+- **Backend/Database:** Supabase (PostgreSQL)
+- **Authentication:** Supabase Auth (Admin login access)
+- **Storage:** Supabase Storage (for Blog media)
+- **Rich Text Editor:** TipTap (Headless ProseMirror)
+
+---
+
+## 🚀 Project Plan & Status
+
+### ✅ What is Done 
+- **Core Architecture:** Setup Next.js App Router, global typography, and CSS design system structure.
+- **Supabase Integration:** Full database connection, authentication routing, and Supabase client abstractions (`lib/supabase`).
+- **Admin Dashboard UI:** Created secure admin routes `/admin/*` protected by middleware.
+- **Blog System (CRUD):** Built the complete blog authoring experience with a rich-text TipTap editor, auto-slug generation, draft/publish modes, and database connection.
+- **Thought of the Day:** Implemented an admin interface to dynamically update the scripture quote on the homepage.
+- **RLS Security:** Explicitly secured Supabase policies, creating targeted SQL policies to allow authenticated admin `INSERT`/`UPDATE` operations without exposing the backend to the public.
+
+### ✨ What We Did Today (Phase 3 UI Refinement & Fixes)
+- **Hero Spotlight Redesign:** Overhauled the homepage hero section. Replaced old static blobs with the "Sacred Editorial" dark grid texture. Engineered a zero-lag, 1:1 CSS-native glowing cursor spotlight that reveals the grid underneath without dragging or trailing issues.
+- **Typography & Iconography Polish:** Purged all generic emojis across the site (Navbar, Footer, Program lists) and replaced them with crisp, professional `lucide-react` SVG icons.
+- **Supabase Storage Uploads:** Resolved the complex `blog-images` upload failures by precisely diagnosing and creating the required Row-Level Security (RLS) SQL policies for the storage bucket.
+- **Image Bypassing Fix:** Discovered that long-running Next.js development servers refuse to acknowledge `next.config.ts` updates. Seamlessly bypassed this cache-lock by swapping `<Image />` for native `<img>` tags, allowing the Ministry Gallery, blog feeds, and admin preview panels to render Supabase images immediately without requiring terminal restarts.
+- **Blog Card Layouts:** Shrunk and polished the blog card components. Enforced a rigid `3-line` text clamp on excerpts and implemented `word-break` algorithms to prevent gibberish test data from shattering the UI.
+
+### ⏳ What is Left (Next Steps)
+- **Internal Page Completion:** Finish the editorial design pass on the remaining secondary pages (`/about`, `/mission-field`, `/contact`).
+- **Contact Form Integration:** Wire up the Contact page to dispatch emails to `jeffryjoshua15@gmail.com` using the Resend API (key is already in `.env.local`).
+- **Responsive Audit:** Perform a final rigorous cross-device check to ensure the strict CSS grid rules and the custom cursor spotlight perform flawlessly on legacy mobile browsers.
+- **Production Deployment:** Push the final `main` branch to Vercel, attach the production Supabase environment variables, and map the live domain.
+
+---
+
+## 💻 Getting Started (Development)
+
+First, install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Start the development server:
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open [http://localhost:3000](http://localhost:3000) with your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🔐 Environment Variables Required
+To run this project locally, ensure you have a `.env.local` file at the root containing:
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+RESEND_API_KEY=your_resend_api_key
+ADMIN_EMAIL=your_admin_email_destination
+```
